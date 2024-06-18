@@ -1,0 +1,50 @@
+[ req ]
+  default_bits = 4096
+  default_keyfile = entity.key
+  distinguished_name = req_distinguished_name
+  attributes = req_attributes
+  x509_extensions = v3_ca
+  
+  string_mask = utf8only
+  
+[ req_distinguished_name ]
+  countryName = Country Name (2 letters code)
+  countryName_default = LT
+  countryName_min = 2
+  countryName_max = 2
+  stateOrProvinceName = State or Provice Name (up to 22 characters)
+  stateOrProvinceName_default = Republic of Lithuania
+  stateOrProvinceName_min = 8
+  stateOrProvinceName_max = 22
+  localityName = Locality Name (e.g. city, up to 22 characters)
+  localityName_default = Vilnius
+  localityName_min = 2
+  localityName_max = 22
+  organizationName = Organization Name (e.g. company, up to 44 characters)
+  organizationName_default = Tech
+  organizationName_min = 4
+  organizationName_max = 44
+  organizationalUnitName = Organizational Unit Name (e.g. section, up to 55 characters)
+  organizationalUnitName_default = WorkGroup
+  organizationalUnitName_min = 5
+  organizationalUnitName_max = 55
+  commonName = Common Name (e.g. server FQDN or Your Name, up to 64 characters)
+  commonName_default = AngiScript
+  commonName_min = 3
+  commonName_max = 64
+  emailAddress = Email Address (up to 40 characters)
+  emailAddress_default = support@angiscript.lt
+  emailAddress_min = 0
+  emailAddress_max = 40
+  
+[ req_attributes ]
+  challengePassword = A challenge codename or password (up to 40 characters)
+  challengePassword_default = admin
+  challengePassword_min = 4
+  challengePassword_max = 40
+  
+[ v3_ca ]
+  subjectKeyIdentifier=hash
+  authorityKeyIdentifier=keyid:always,issuer:always
+  basicConstraints=critical,CA:false,pathlen:0
+
